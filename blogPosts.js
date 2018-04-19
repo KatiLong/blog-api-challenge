@@ -41,7 +41,7 @@ router.post('/', jsonParser, (req, res) => {
 //Delete blog posts by id
 router.delete('/:id', (req, res) => {
     BlogPosts.delete(req.params.id);
-    console.log(`Deleted shopping list item \`${req.params.ID}\``);
+    console.log(`Deleted blog post item \`${req.params.ID}\``);
     res.status(204).end();
 });
 
@@ -66,8 +66,8 @@ router.put('/:id', jsonParser, (req, res) => {
         console.error(message);
         return res.status(400).send(message);
     }
-    console.log(`Updating shopping list item \`${req.params.id}\``);
-    const updatedItem = Recipes.update({
+    console.log(`Updating blog post \`${req.params.id}\``);
+    const updatedItem = BlogPosts.update({
         id: req.params.id,
         title: req.body.title,
         content: req.body.content,
