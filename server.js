@@ -5,20 +5,15 @@
 //Use Express router and modularize routes to /blog-posts.
 //Meaning make separate files and app.use
 
+const express = require('express');
+
 const app = express();
 
-const blogPosts = require('./blogPosts');
-
-//logs the HTTP layer
-app.use(morgan('common'));
+const blogPostsRouter = require('./blogPosts');
 
 app.use(express.static('public'));
-
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/views/index.html');
-})
 //routing requests to express router instances that were imported above
-app.use('/blog-posts', blogPosts);
+app.use('/blog-posts', blogPostsRouter);
 
 
 app.listen(process.env.PORT || 8080, () => {
