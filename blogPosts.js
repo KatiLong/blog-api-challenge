@@ -18,13 +18,13 @@ BlogPosts.create('React Native', 'Small and created by Facebook', 'MPJ', '2017')
 
 //when root of this router is called with GET, return all
 //current blogPosts items
-router.get('/', (req, res) => {
+router.get('/get', (req, res) => {
     res.json(BlogPosts.get());
 });
 //when new blog post added, ensure it has required fields.
 //if not log error and return 400 status with helpful message
 //if okay, add new item, and return it with a status 201
-router.post('/', jsonParser, (req, res) => {
+router.post('/create', jsonParser, (req, res) => {
     const requiredFields = ['title', 'content', 'author'];
     for (let i = 0; i < requiredFields.length; i++) {
         const field = requiredFields[i];
@@ -39,7 +39,7 @@ router.post('/', jsonParser, (req, res) => {
 });
 
 //Delete blog posts by id
-router.delete('/:id', (req, res) => {
+router.delete('/delete/:id', (req, res) => {
     BlogPosts.delete(req.params.id);
     console.log(`Deleted blog post item \`${req.params.ID}\``);
     res.status(204).end();
@@ -49,7 +49,7 @@ router.delete('/:id', (req, res) => {
 // if fails, logs error and sends back status code 400
 // otherwise call 'Recipes.updateItem' with update Post
 //title, content, author, publishDate
-router.put('/:id', jsonParser, (req, res) => {
+router.put('/update/:id', jsonParser, (req, res) => {
     const requiredFields = ['title', 'content', 'author'];
     for (let i = 0; i < requiredFields.length; i++) {
         const field = requiredFields[i];
