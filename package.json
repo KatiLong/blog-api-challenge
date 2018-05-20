@@ -1,22 +1,26 @@
 {
-  "name": "blog-api-challenge",
-  "version": "1.0.0",
-  "description": "\"Basic CRUD API for a blogging platform\"",
-  "main": "models.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KatiLong/blog-api-challenge.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KatiLong/blog-api-challenge/issues"
-  },
-  "homepage": "https://github.com/KatiLong/blog-api-challenge#readme",
-  "dependencies": {
-    "uuid": "^3.2.1"
-  }
+    "name": "blog-api-challenge",
+    "version": "1.0.0",
+    "description": "\"Basic CRUD API for a blogging platform\"",
+    "main": "models.js",
+    "scripts": {
+        "test": "mocha",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/KatiLong/blog-api-challenge.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/KatiLong/blog-api-challenge/issues"
+    },
+    "homepage": "https://github.com/KatiLong/blog-api-challenge#readme",
+    "dependencies": {
+        "uuid": "^3.2.1"
+    },
+    "devDependencies": {
+        "mocha": "^5.2.0"
+    }
 }
